@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book a Service - Serenity Spa</title>
+</head>
+<body>
+
+    <h1>Book a Treatment</h1>
+    <p>Fill in your details below and we'll confirm your appointment</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Book Now</button>
+    </form>
+
+    <a href="{% url 'home' %}">Back to Home</a>
+
+</body>
+</html>

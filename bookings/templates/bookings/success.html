@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Confirmed - Serenity Spa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            background: #faf8f5;
+            color: #2c2c2c;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #2c2c2c;
+            color: #e8d5b7;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+        }
+
+        header p {
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            margin-top: 8px;
+            color: #c4a882;
+        }
+
+        .success-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+
+        .success-box {
+            background: white;
+            padding: 60px;
+            text-align: center;
+            border-top: 4px solid #e8d5b7;
+            box-shadow: 0 2px 30px rgba(0,0,0,0.08);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .checkmark {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .success-box h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            color: #2c2c2c;
+        }
+
+        .success-box p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: #c4a882;
+            margin: 25px auto;
+        }
+
+        .links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .links a {
+            padding: 12px 25px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background: #2c2c2c;
+            color: #e8d5b7;
+        }
+
+        .btn-secondary {
+            border: 1px solid #2c2c2c;
+            color: #2c2c2c;
+        }
+
+        .btn-primary:hover { background: #8b6f4e; }
+        .btn-secondary:hover { background: #faf8f5; }
+
+        footer {
+            background: #1a1a1a;
+            color: #666;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>SERENITY SPA</h1>
+    <p>LUXURY WELLNESS & TREATMENTS</p>
+</header>
+
+<div class="success-container">
+    <div class="success-box">
+        <div class="checkmark">✨</div>
+        <h2>BOOKING CONFIRMED</h2>
+        <div class="divider"></div>
+        <p>Thank you for choosing Serenity Spa.</p>
+        <p>We have received your booking and will contact you shortly to confirm your appointment details.</p>
+        <div class="links">
+            <a href="{% url 'home' %}" class="btn-primary">Back to Home</a>
+            <a href="{% url 'home' %}#booking" class="btn-secondary">Book Again</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Serenity Spa. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

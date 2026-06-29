@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Serenity Spa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            background: #faf8f5;
+            color: #2c2c2c;
+        }
+
+        header {
+            background: #2c2c2c;
+            color: #e8d5b7;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+        }
+
+        header p {
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            margin-top: 8px;
+            color: #c4a882;
+        }
+
+        nav {
+            background: #e8d5b7;
+            text-align: center;
+            padding: 12px;
+        }
+
+        nav a {
+            color: #2c2c2c;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav a:hover { color: #8b6f4e; }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                        url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1400') center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
+
+        .hero p {
+            margin-top: 10px;
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+        }
+
+        .hero a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 35px;
+            background: #e8d5b7;
+            color: #2c2c2c;
+            text-decoration: none;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .hero a:hover { background: #c4a882; }
+
+        section {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 300;
+            text-align: center;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: #c4a882;
+            margin: 0 auto 40px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 35px;
+            border-top: 3px solid #e8d5b7;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+        }
+
+        .service-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+        .service-card .price {
+            color: #8b6f4e;
+            font-weight: 400;
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+
+        .booking-section {
+            background: #2c2c2c;
+            color: #e8d5b7;
+            padding: 60px 20px;
+        }
+
+        .booking-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 300;
+            text-align: center;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .booking-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            color: #c4a882;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background: #3d3d3d;
+            border: 1px solid #555;
+            color: #e8d5b7;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .form-group textarea { height: 100px; resize: vertical; }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: #e8d5b7;
+            color: #2c2c2c;
+            border: none;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover { background: #c4a882; }
+
+        footer {
+            background: #1a1a1a;
+            color: #666;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>SERENITY SPA</h1>
+    <p>LUXURY WELLNESS & TREATMENTS</p>
+</header>
+
+<nav>
+    <a href="#services">Services</a>
+    <a href="#booking">Book Now</a>
+</nav>
+
+<div class="hero">
+    <div>
+        <h2>Escape. Relax. Restore.</h2>
+        <p>PREMIUM SPA TREATMENTS TAILORED FOR YOU</p>
+        <a href="#booking">Book a Treatment</a>
+    </div>
+</div>
+
+<section id="services">
+    <h2>OUR TREATMENTS</h2>
+    <div class="divider"></div>
+    <div class="services-grid">
+        {% for service in services %}
+        <div class="service-card">
+            <h3>{{ service.name }}</h3>
+            <p>{{ service.description }}</p>
+            <p>⏱ {{ service.duration_minutes }} minutes</p>
+            <p class="price">₦{{ service.price }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<div class="booking-section" id="booking">
+    <h2>BOOK A TREATMENT</h2>
+    <div class="divider" style="background:#555; margin-bottom:40px;"></div>
+    <form method="POST" class="booking-form">
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="form-group">
+                <label>Full Name</label>
+                {{ form.customer_name }}
+            </div>
+            <div class="form-group">
+                <label>Phone Number</label>
+                {{ form.customer_phone }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Email Address</label>
+            {{ form.customer_email }}
+        </div>
+        <div class="form-group">
+            <label>Select Service</label>
+            {{ form.service }}
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label>Preferred Date</label>
+                {{ form.booking_date }}
+            </div>
+            <div class="form-group">
+                <label>Preferred Time</label>
+                {{ form.booking_time }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Special Requests (Optional)</label>
+            {{ form.notes }}
+        </div>
+        <button type="submit" class="submit-btn">Confirm Booking</button>
+    </form>
+</div>
+
+<footer>
+    <p>© 2026 Serenity Spa. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
