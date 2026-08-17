@@ -1,149 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Booking Confirmed - Serenity Spa</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Jost', sans-serif;
-            background: #faf8f5;
-            color: #2c2c2c;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        header {
-            background: #2c2c2c;
-            color: #e8d5b7;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        header h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3rem;
-            font-weight: 300;
-            letter-spacing: 4px;
-        }
-
-        header p {
-            font-size: 0.9rem;
-            letter-spacing: 3px;
-            margin-top: 8px;
-            color: #c4a882;
-        }
-
-        .success-container {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 60px 20px;
-        }
-
-        .success-box {
-            background: white;
-            padding: 60px;
-            text-align: center;
-            border-top: 4px solid #e8d5b7;
-            box-shadow: 0 2px 30px rgba(0,0,0,0.08);
-            max-width: 500px;
-            width: 100%;
-        }
-
-        .checkmark {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .success-box h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            font-weight: 300;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-            color: #2c2c2c;
-        }
-
-        .success-box p {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.8;
-            margin-bottom: 10px;
-        }
-
-        .divider {
-            width: 60px;
-            height: 1px;
-            background: #c4a882;
-            margin: 25px auto;
-        }
-
-        .links {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 30px;
-        }
-
-        .links a {
-            padding: 12px 25px;
-            text-decoration: none;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .btn-primary {
-            background: #2c2c2c;
-            color: #e8d5b7;
-        }
-
-        .btn-secondary {
-            border: 1px solid #2c2c2c;
-            color: #2c2c2c;
-        }
-
-        .btn-primary:hover { background: #8b6f4e; }
-        .btn-secondary:hover { background: #faf8f5; }
-
-        footer {
-            background: #1a1a1a;
-            color: #666;
-            text-align: center;
-            padding: 30px;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-        }
-    </style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reservation Confirmed — Serenity Spa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --dark: #111010; --dark2: #1c1a18; --gold: #c9a96e; --gold2: #e8d5b0; --cream: #f7f3ec; --gray: #888; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--dark); color: var(--cream); min-height: 100vh; display: flex; flex-direction: column; }
+    nav { padding: 22px 60px; border-bottom: 1px solid rgba(201,169,110,0.1); }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; letter-spacing: 5px; color: var(--gold2); text-decoration: none; }
+    .success-wrap { flex: 1; display: flex; align-items: center; justify-content: center; padding: 60px 24px; }
+    .success-box {
+      max-width: 520px; width: 100%; text-align: center;
+      background: var(--dark2); border: 1px solid rgba(201,169,110,0.15);
+      padding: 64px 52px; opacity: 0; transform: translateY(30px);
+      animation: fadeUp 0.9s 0.2s ease forwards;
+    }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    .success-icon {
+      width: 64px; height: 64px; border: 1px solid rgba(201,169,110,0.4);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 28px; font-size: 1.4rem; color: var(--gold);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 0 0 0 rgba(201,169,110,0.2); }
+      50% { box-shadow: 0 0 0 12px rgba(201,169,110,0); }
+    }
+    .success-title { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--cream); margin-bottom: 6px; letter-spacing: 1px; }
+    .success-rule { width: 40px; height: 1px; background: var(--gold); margin: 18px auto; }
+    .success-text { font-size: 0.88rem; color: var(--gray); line-height: 1.85; margin-bottom: 40px; }
+    .success-links { display: flex; gap: 14px; justify-content: center; }
+    .btn { padding: 12px 28px; font-family: 'DM Sans', sans-serif; font-size: 0.75rem; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; transition: all 0.3s; }
+    .btn-primary { background: var(--gold); color: var(--dark); }
+    .btn-primary:hover { background: var(--gold2); }
+    .btn-outline { border: 1px solid rgba(201,169,110,0.4); color: var(--gold2); background: transparent; }
+    .btn-outline:hover { border-color: var(--gold); background: rgba(201,169,110,0.06); }
+    footer { padding: 28px 60px; border-top: 1px solid rgba(201,169,110,0.08); text-align: center; font-size: 0.75rem; color: rgba(247,243,236,0.25); letter-spacing: 1px; }
+  </style>
 </head>
 <body>
-
-<header>
-    <h1>SERENITY SPA</h1>
-    <p>LUXURY WELLNESS & TREATMENTS</p>
-</header>
-
-<div class="success-container">
+  <nav>
+    <a class="nav-logo" href="{% url 'home' %}">SERENITY</a>
+  </nav>
+  <div class="success-wrap">
     <div class="success-box">
-        <div class="checkmark">✨</div>
-        <h2>BOOKING CONFIRMED</h2>
-        <div class="divider"></div>
-        <p>Thank you for choosing Serenity Spa.</p>
-        <p>We have received your booking and will contact you shortly to confirm your appointment details.</p>
-        <div class="links">
-            <a href="{% url 'home' %}" class="btn-primary">Back to Home</a>
-            <a href="{% url 'home' %}#booking" class="btn-secondary">Book Again</a>
-        </div>
+      <div class="success-icon">&#10022;</div>
+      <h1 class="success-title">Reservation Received</h1>
+      <div class="success-rule"></div>
+      <p class="success-text">
+        Thank you for choosing Serenity Spa.<br/>
+        Your reservation has been submitted successfully.<br/><br/>
+        Our team will reach out to you within 24 hours to confirm your appointment details.
+      </p>
+      <div class="success-links">
+        <a href="{% url 'home' %}" class="btn btn-primary">Back to Home</a>
+        <a href="{% url 'home' %}#booking" class="btn btn-outline">Book Again</a>
+      </div>
     </div>
-</div>
-
-<footer>
-    <p>© 2026 Serenity Spa. All rights reserved.</p>
-</footer>
-
+  </div>
+  <footer>&copy; 2026 Serenity Spa. All rights reserved.</footer>
 </body>
 </html>
