@@ -30,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*', 'serenity-spa-u4lx.onrender.com']
 
@@ -139,7 +139,7 @@ else:
     DEFAULT_FROM_EMAIL = 'reubenchimaprovidence@gmail.com'
     ADMIN_EMAIL = 'reubenchimaprovidence@gmail.com'
 
-    
+
 JAZZMIN_SETTINGS = {
     "site_title": "Serenity Spa Admin",
     "site_header": "Serenity Spa",
