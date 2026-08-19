@@ -13,40 +13,13 @@ def home(request):
             try:
                 send_mail(
                     subject=f'New Booking - {booking.customer_name}',
-                    message=f'''
-New booking received at Serenity Spa!
-
-Customer: {booking.customer_name}
-Email: {booking.customer_email}
-Phone: {booking.customer_phone}
-Service: {booking.service.name}
-Date: {booking.booking_date}
-Time: {booking.booking_time}
-Notes: {booking.notes}
-                    ''',
+                    message=f'Customer: {booking.customer_name}\nEmail: {booking.customer_email}\nPhone: {booking.customer_phone}\nService: {booking.service.name}\nDate: {booking.booking_date}\nTime: {booking.booking_time}\nNotes: {booking.notes}',
                     from_email=settings.DEFAULT_FROM_EMAIL,
                     recipient_list=[settings.ADMIN_EMAIL],
                     fail_silently=True,
                 )
             except Exception:
                 pass
-            return redirect('booking_success')
-    else:
-        form = BookingForm()
-    return render(request, 'bookings/home.html', {'services': services, 'form': form})
-
-Customer: {booking.customer_name}
-Email: {booking.customer_email}
-Phone: {booking.customer_phone}
-Service: {booking.service.name}
-Date: {booking.booking_date}
-Time: {booking.booking_time}
-Notes: {booking.notes}
-                ''',
-                from_email=settings.DEFAULT_FROM_EMAIL,
-                recipient_list=[settings.ADMIN_EMAIL],
-                fail_silently=True,
-            )
             return redirect('booking_success')
     else:
         form = BookingForm()
