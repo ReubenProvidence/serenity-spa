@@ -27,7 +27,7 @@ Notes: {booking.notes}
                 ''',
                 from_email=settings.DEFAULT_FROM_EMAIL,
                 recipient_list=[settings.ADMIN_EMAIL],
-                fail_silently=False,
+                fail_silently=True,
             )
             return redirect('booking_success')
     else:
