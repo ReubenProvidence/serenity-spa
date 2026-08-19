@@ -1,12 +1,42 @@
 [
-{
-  "model": "bookings.service",
-  "pk": 1,
-  "fields": {
-    "name": "swedish massage",
-    "description": "A nice relaxing massage",
-    "duration_minutes": 15,
-    "price": "15000.00"
+  {
+    "model": "bookings.service",
+    "pk": 1,
+    "fields": {
+      "name": "Swedish Massage",
+      "description": "A full body relaxing massage to relieve tension and stress",
+      "duration_minutes": 60,
+      "price": "15000.00"
+    }
+  },
+  {
+    "model": "bookings.service",
+    "pk": 2,
+    "fields": {
+      "name": "Deep Tissue Massage",
+      "description": "Targets deep muscle layers to release chronic pain and tension",
+      "duration_minutes": 75,
+      "price": "20000.00"
+    }
+  },
+  {
+    "model": "bookings.service",
+    "pk": 3,
+    "fields": {
+      "name": "Luxury Facial",
+      "description": "A rejuvenating facial treatment to cleanse and brighten your skin",
+      "duration_minutes": 45,
+      "price": "12000.00"
+    }
+  },
+  {
+    "model": "bookings.service",
+    "pk": 4,
+    "fields": {
+      "name": "Manicure and Pedicure",
+      "description": "Complete nail care treatment for hands and feet",
+      "duration_minutes": 60,
+      "price": "8000.00"
+    }
   }
-}
 ]
