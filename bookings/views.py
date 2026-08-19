@@ -10,12 +10,30 @@ def home(request):
         form = BookingForm(request.POST)
         if form.is_valid():
             booking = form.save()
-            
-            # Send email notification
-            send_mail(
-                subject=f'New Booking - {booking.customer_name}',
-                message=f'''
+            try:
+                send_mail(
+                    subject=f'New Booking - {booking.customer_name}',
+                    message=f'''
 New booking received at Serenity Spa!
+
+Customer: {booking.customer_name}
+Email: {booking.customer_email}
+Phone: {booking.customer_phone}
+Service: {booking.service.name}
+Date: {booking.booking_date}
+Time: {booking.booking_time}
+Notes: {booking.notes}
+                    ''',
+                    from_email=settings.DEFAULT_FROM_EMAIL,
+                    recipient_list=[settings.ADMIN_EMAIL],
+                    fail_silently=True,
+                )
+            except Exception:
+                pass
+            return redirect('booking_success')
+    else:
+        form = BookingForm()
+    return render(request, 'bookings/home.html', {'services': services, 'form': form})
 
 Customer: {booking.customer_name}
 Email: {booking.customer_email}
